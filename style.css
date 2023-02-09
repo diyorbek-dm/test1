@@ -148,9 +148,9 @@
   box-shadow: inset 3px 3px 4px rgba(234, 232, 230, 0.78), inset -3px -3px 4px rgba(255, 255, 255, 0.7);
 }
 
-@media (min-width: 390px) {
+@media (max-width: 375px) {
   .wrapper {
-    max-width: 350px;
+    max-width: 335px;
     margin: 0 auto;
   }
 
@@ -164,7 +164,7 @@
   }
 
   .output {
-    width: 350px;
+    width: 335px;
     height: 85px;
     margin-bottom: 40px;
     border-radius: 10px;
@@ -179,8 +179,9 @@
   }
 
   .buttons {
-    grid-template-columns: repeat(4, 75px);
-    grid-template-rows: repeat(5, 67px);
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(5, 60px);
+    padding: 6px 4px;
     column-gap: 17px;
     row-gap: 20px;
   }
@@ -196,9 +197,10 @@
   }
 
   .equals {
-    width: 75px;
-    height: 155px;
+    width: 70px;
+    height: 139px;
     box-shadow: 0px 0px 5px #A160FB;
     border-radius: 5px;
   }
 }
+
