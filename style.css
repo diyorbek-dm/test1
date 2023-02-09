@@ -206,7 +206,7 @@
   }
 } */
 
-@media (max-width: 375px) {
+@media (min-width: 375px) {
   .wrapper {
     max-width: 335px;
     margin: 0 auto;
@@ -262,7 +262,7 @@
   }
 }
 
-@media (min-width: 320px) {
+@media (max-width: 320px) {
   .wrapper {
     max-width: 280px;
     margin: 0 auto;
