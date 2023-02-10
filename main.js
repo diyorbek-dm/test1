@@ -3,6 +3,8 @@ const btn = document.querySelectorAll('.btn')
 const remove = document.querySelector('.remove')
 const task = document.querySelector('.task')
 const result = document.querySelector('.result')
+const output = document.querySelector('.output')
+const error = document.querySelector('.error')
 
 // Connecting theme changer
 document.querySelector('.darkMode').addEventListener('click', event => {
@@ -15,7 +17,7 @@ document.querySelector('.darkMode').addEventListener('click', event => {
   document.body.classList.toggle('body-light')
 
   // Output
-  document.querySelector('.output').classList.toggle('output-light')
+  output.classList.toggle('output-light')
 
   // Result 
   document.querySelector('.result').classList.toggle('result-light')
@@ -83,7 +85,10 @@ document.querySelector('.buttons').addEventListener('click', event => {
         break;
       case '/':
         if (b === '0' || a === '0') {
-          result.textContent = 'Error'
+          output.classList.add('output-error')
+          error.classList.add('error-active')
+
+          result.textContent = '0'
           a = ''
           b = ''
           sign = ''
@@ -92,6 +97,13 @@ document.querySelector('.buttons').addEventListener('click', event => {
         a = (+a) / (+b)
         break;
       case '%':
+        if (b === '0' || a === '0') {
+          result.textContent = '0'
+          a = ''
+          b = ''
+          sign = ''
+          return
+        }
         a = (+a) % (+b)
         break;
     }
@@ -106,6 +118,8 @@ document.querySelector('.buttons').addEventListener('click', event => {
     b = ''
     stop = false
     result.textContent = 0
+    output.classList.remove('output-error')
+    error.classList.remove('error-active')
     task.textContent = `${a = ''} ${sign = ''} ${b = ''}`
   }
 })
